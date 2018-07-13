@@ -1,8 +1,10 @@
 function New-Crednetial {
     param (
-        $Username,
-        $Password
+        [Parameter(ValueFromPipelineByPropertyName)]$Username,
+        [Parameter(ValueFromPipelineByPropertyName)]$Password
     )
-    $CredentialPassword = ConvertTo-SecureString $Password -AsPlainText -Force
-    New-Object System.Management.Automation.PSCredential ($UserName, $CredentialPassword)
+    process {
+        $CredentialPassword = ConvertTo-SecureString $Password -AsPlainText -Force
+        New-Object System.Management.Automation.PSCredential ($UserName, $CredentialPassword)    
+    }
 }
