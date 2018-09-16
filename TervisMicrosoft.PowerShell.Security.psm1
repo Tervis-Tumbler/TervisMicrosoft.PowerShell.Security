@@ -1,6 +1,6 @@
 function New-Crednetial {
     param (
-        [Parameter(ValueFromPipelineByPropertyName)]$Username,
+        [Parameter(ValueFromPipelineByPropertyName,Mandatory)]$Username,
         [Parameter(ValueFromPipelineByPropertyName)]$Password
     )
     process {
